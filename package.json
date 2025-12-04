@@ -1,0 +1,23 @@
+{
+  "name": "petshop-manager",
+  "version": "1.0.0",
+  "description": "Sistema completo de gerenciamento de petshop com API REST e interface web",
+  "scripts": {
+    "dev": "concurrently \"npm run api:dev\" \"npm run frontend:dev\"",
+    "api:dev": "cd api && npx ts-node src/server.ts",
+    "api:install": "cd api && npm install",
+    "api:db:generate": "cd api && npx prisma generate",
+    "api:db:push": "cd api && npx prisma db push",
+    "api:db:studio": "cd api && npx prisma studio",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:install": "cd frontend && npm install",
+    "install:all": "npm run api:install && npm run frontend:install",
+    "setup": "npm run install:all && npm run api:db:generate && npm run api:db:push"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["petshop", "typescript", "prisma", "react", "api"],
+  "author": "",
+  "license": "MIT"
+}

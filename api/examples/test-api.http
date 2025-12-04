@@ -1,0 +1,169 @@
+### Teste da API do Petshop
+### Execute estes comandos no VS Code com a extensão REST Client
+
+### 1. Health Check
+GET http://localhost:3000/api/health
+
+###
+
+### 2. Criar Cliente
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "telefone": "11999999999",
+  "endereco": "Rua das Flores, 123"
+}
+
+###
+
+### 3. Listar Clientes
+GET http://localhost:3000/api/clientes
+
+###
+
+### 4. Criar Pet
+POST http://localhost:3000/api/pets
+Content-Type: application/json
+
+{
+  "nome": "Rex",
+  "especie": "Cachorro",
+  "raca": "Golden Retriever",
+  "idade": 3,
+  "peso": 25.5,
+  "observacoes": "Pet muito dócil",
+  "clienteId": 1
+}
+
+###
+
+### 5. Listar Pets
+GET http://localhost:3000/api/pets
+
+###
+
+### 6. Criar Serviço
+POST http://localhost:3000/api/servicos
+Content-Type: application/json
+
+{
+  "tipo": "Banho e Tosa",
+  "descricao": "Banho completo com tosa higiênica",
+  "preco": 80.00,
+  "dataServico": "2024-01-15T14:00:00Z",
+  "clienteId": 1,
+  "petId": 1
+}
+
+###
+
+### 7. Listar Serviços
+GET http://localhost:3000/api/servicos
+
+###
+
+### 8. Buscar Cliente por ID
+GET http://localhost:3000/api/clientes/1
+
+###
+
+### 9. Buscar Pet por ID
+GET http://localhost:3000/api/pets/1
+
+###
+
+### 10. Buscar Serviço por ID
+GET http://localhost:3000/api/servicos/1
+
+###
+
+### 11. Marcar Serviço como Realizado
+PUT http://localhost:3000/api/servicos/1/realizado
+
+###
+
+### 12. Estatísticas dos Serviços
+GET http://localhost:3000/api/servicos/estatisticas
+
+###
+
+### 13. Buscar Clientes
+GET http://localhost:3000/api/clientes/search?q=joão
+
+###
+
+### 14. Buscar Pets por Cliente
+GET http://localhost:3000/api/pets/cliente/1
+
+###
+
+### 15. Buscar Serviços por Cliente
+GET http://localhost:3000/api/servicos/cliente/1
+
+###
+
+### 16. Buscar Serviços por Pet
+GET http://localhost:3000/api/servicos/pet/1
+
+###
+
+### 17. Buscar Pets por Espécie
+GET http://localhost:3000/api/pets/especie/cachorro
+
+###
+
+### 18. Buscar Serviços por Tipo
+GET http://localhost:3000/api/servicos/tipo/banho
+
+###
+
+### 19. Atualizar Cliente
+PUT http://localhost:3000/api/clientes/1
+Content-Type: application/json
+
+{
+  "nome": "João Santos Silva",
+  "telefone": "11888888888"
+}
+
+###
+
+### 20. Atualizar Pet
+PUT http://localhost:3000/api/pets/1
+Content-Type: application/json
+
+{
+  "peso": 26.0,
+  "observacoes": "Pet muito dócil e brincalhão"
+}
+
+###
+
+### 21. Atualizar Serviço
+PUT http://localhost:3000/api/servicos/1
+Content-Type: application/json
+
+{
+  "preco": 85.00,
+  "descricao": "Banho completo com tosa higiênica e corte de unhas"
+}
+
+###
+
+### 22. Deletar Serviço
+DELETE http://localhost:3000/api/servicos/1
+
+###
+
+### 23. Deletar Pet
+DELETE http://localhost:3000/api/pets/1
+
+###
+
+### 24. Deletar Cliente
+DELETE http://localhost:3000/api/clientes/1
+
+###
